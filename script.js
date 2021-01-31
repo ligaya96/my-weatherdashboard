@@ -1,6 +1,6 @@
 $(document).ready(function(){}
 )
-//search button
+//search button/bar
 
 //search multiple cities
 
@@ -12,4 +12,4 @@ $(document).ready(function(){}
 
 //API
 
-// 
+// UV index
