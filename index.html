@@ -16,22 +16,32 @@
     <h1>Weather Dashbaord!</h1>
   </head>
   <!-- Search Bar-->
-  <div class= "container">
+<div class= "container">
     <div class = "row">
-         <h5> Search</h5>
+         <h5> Search City</h5>
+         <textarea name="searchtext" id="search" ></textarea>
+         <button class="btn btn-primary" id="searchBtn"> 
     </div>
-  </div>
     <!-- search history-->
-  <aside>
-   <li>
-
+  <aside class = "col-lg-3" >
+   <li class = "list-searchhistory">
+      <ul></ul>
    </li>
   </aside>
-<!--Current weather-->
-<div class = "card-body">
-  <!-- Winds-->
-  <!--Tempature-->
-  <!--City-->
+ <!--Current weather-->
+ <div class = "card-body">
+   <div class = "card">
+      <div class = "cardtitle" id= "Current-weather">
+         <!-- Winds-->
+        <P class="cardtext" id= "Winds"> Windspeed</P>
+         <!--Tempature-->
+        <p class = "cardtext" id = "temp"> Tempature</p>
+           <!--City-->
+        <p class = "cardtext" id = "city"> City</p>
+        <p class = "cardtext" id = "UV index"> UV Index</p>
+     </div>       
+    </div>
+  </div>
 </div>
 </body>
 </html>
