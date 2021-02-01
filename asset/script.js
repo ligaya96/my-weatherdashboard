@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var APPKEY = "ad8618221b820a5c5d95b144d55511c9";
+ // var APPKEY = 
   var weatherValue = $("#search").val();
  //search button/bar
  $("#searchBtn").on("click", function() {
@@ -8,7 +8,7 @@ $(document).ready(function() {
  });
 // Jquery API/ search results
 function getApi(){
-  var requestUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + weatherValue;
+ var requestUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + weatherValue;
   fetch(requestUrl)
   .then(function(response) { 
     return response.json();
