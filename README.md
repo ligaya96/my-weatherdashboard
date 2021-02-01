@@ -4,4 +4,6 @@
 
 //screenshot here
 
-//[OpenWeather API](https://openweathermap.org/api)
+// resources:  [OpenWeather API](https://openweathermap.org/api)
+
+// github link here
