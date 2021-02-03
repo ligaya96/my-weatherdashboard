@@ -2,49 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-  <title>Wather Dashboard APP</title>
+  <title>Weather Forcast APP</title>
 </head>
 <body>
   <head> 
     <!--jumnbotron-->
-    <h1>Weather Dashboard!</h1>
+      <nav class="navbar navbar-dark bg-dark">
+          <h1 class="navbar-brand mb-0 h1 w-100 text-center">The Weather Forecast!</h1>
+      </nav>
+
   </head>
   <!-- Search Bar-->
-<div class= "container">
-    <div class = "row">
-         <h5> Search City</h5>
-         <textarea name="searchtext" id="search" ></textarea>
-         <button class="btn btn-primary" id="searchBtn"> 
+<div class= "container-fluid">
+    <div class = "row col-md-3">
+         <h5> Search by City : </h5>
+         <form class = "form-inline">
+          <input class="form-control mr-sm-2 input" type="search" placeholder="Search City">
+          <button class="btn btn-primary" id="searchBtn"> Submit </button>
+         </form>
+  
     </div>
     <!-- search history-->
   <aside class = "col-lg-3" >
    <li class = "list-searchistory">
-      <ul></ul>
+      <ul>
+      </ul>
    </li>
   </aside>
  <!--Current weather-->
- <div class = "card-body">
-   <div class = "card">
-      <div class = "cardtitle" id= "Current-weather">
-         <!-- Winds-->
-        <P class="cardtext" id= "Winds"> Windspeed</P>
-         <!--Tempature-->
-        <p class = "cardtext" id = "temp"> Tempature</p>
-           <!--City-->
-        <p class = "cardtext" id = "city"> City</p>
-        <!-- UV index-->
-        <p class = "cardtext" id = "UV-index"> UV Index</p>
-     </div>       
+ <div class = "card-group col-md-9" >
+   <div class = "card"  id= "Currentweather" >
+     <div class = "card-body">
+        <div class = "cardtitle">
+        <P class = "cardtext" id= "Winds"> Current Windspeed: </P>
+        <p class = "cardtext" id = "Temp"> Current Tempature:</p>
+        <p class = "cardtext" id = "UV-Index"> Current UV index: </p>
+        <p class = "cardtext" id = "Humidity"> Humidity: </p>
+        </div>  
+     </div>  
+    </div>    
+      <!--displaying the five day forcast-->    
+    <div>
+      <div class = "col-md-2">
+        <div class = " card-body" id = "5dayforcast">
+          <div class = "card-text" id = "dayone"></div>
+          <h5 class = "Tempaturedayone"> Tempature: </h5>
+          <h5 class = "Humiditydayone"> Humidity: </h5>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class = "col-md-2">
+        <div class = " card-body" id = "5dayforcast">
+          <div class = "card-text" id = "dayone"></div>
+          <h5 class = "Tempaturedaytwo"> Tempature: </h5>
+          <h5 class = "Humiditydaytwo"> Humidity: </h5>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class = "col-md-2">
+        <div class = " card-body" id = "5dayforcast">
+          <div class = "card-text" id = "dayone"></div>
+          <h5 class = "Tempaturedaythree"> Tempature: </h5>
+          <h5 class = "Humiditydaythree"> Humidity: </h5>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class = "col-md-2">
+        <div class = " card-body" id = "5dayforcast">
+          <div class = "card-text" id = "dayone"></div>
+          <h5 class = "Tempaturedayfour"> Tempature: </h5>
+          <h5 class = "Humiditydayfour"> Humidity: </h5>
+        </div>
+      </div>
+    </div>
+    <div class = "col-md-2">
+      <div class = " card-body" id = "5dayforcast">
+        <div class = "card-text" id = "dayfive"></div>
+        <h5 class = "Tempaturedayfive"> Tempature: </h5>
+        <h5 class = "Humiditydayfive"> Humidity: </h5>
+      </div>
     </div>
   </div>
-</div> 
+</div>
         <script src= "asset/script.js"></script>
 </body>
 </html>
