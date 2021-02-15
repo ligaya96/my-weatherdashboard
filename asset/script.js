@@ -4,7 +4,6 @@ $(document).ready(function () {
   //search button/bar
   $("#searchBtn").on("click", function() {
    $("#Currentweather").empty()
-    //$("#searchistory").append(searchedHistory);
     // console.log(weatherValue);
     getApi(weatherValue);
   });
@@ -64,5 +63,6 @@ function UValue(lat,long) {
     $("#UV-Index").addClass("btn-danger");
   }
   $("#today .cardtext").append(btn)
+  // Pulls search history
    }
    )}
