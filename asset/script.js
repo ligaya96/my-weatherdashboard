@@ -3,7 +3,7 @@ $(document).ready(function () {
   // var APPKEY = "ad8618221b820a5c5d95b144d55511c9";
   //search button/bar
   $("#searchBtn").on("click", function() {
-   $("#Currentweather").val("");
+   $("#Currentweather").empty()
     //$("#searchistory").append(searchedHistory);
     // console.log(weatherValue);
     getApi(weatherValue);
@@ -22,6 +22,7 @@ $(document).ready(function () {
         var long = data.coord.lon;
         var lat = data.coord.lat;
         //  console.log(data)
+        $("#5dayforcast").empty()
         weatherForcast();
         UValue(lat, long);
       })
@@ -41,6 +42,7 @@ function weatherForcast() {
         $("#today").text(data2.name + " (" + new Date().toLocaleDateString() + ")");
         $("#tempatureone").text("Temp: " + data2.daily[i].temp.day)
         $("#humidityone").text("Humidity: " + data2.daily[i].humidity)
+        $("#UV-Index").empty()
       }
     }
 )}
@@ -49,7 +51,17 @@ function weatherForcast() {
 function UValue(lat,long) {
   fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + '&lon=' + long + "&units=imperial&appid=ad8618221b820a5c5d95b144d55511c9")
   return response.json()
-   .then(function (UVdata) {
-      $("#UV-Index").text("UV Index: ")
-   }
+   .then(function (data2) {
+      $("#UV-Index").text("UV Index: " + data2.current.uvi)
+   // changing the colors of UV Index
+  if (data2.current.uvi < 3) {
+    $("#uviBtn").addClass("btn-success")
 }
+  else if (data2.current.uvi < 7) {
+    $("#uviBtn").addClass("btn-warning");
+  }
+  else {
+    $("#uviBtn").addClass("btn-danger");
+  }
+   }
+   )}
