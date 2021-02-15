@@ -52,16 +52,17 @@ function UValue(lat,long) {
   fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + '&lon=' + long + "&units=imperial&appid=ad8618221b820a5c5d95b144d55511c9")
   return response.json()
    .then(function (data2) {
-      $("#UV-Index").text("UV Index: " + data2.current.uvi)
+      $("#UV-Index").text("UV-Index: " + data2.current.uvi)
    // changing the colors of UV Index
   if (data2.current.uvi < 3) {
-    $("#uviBtn").addClass("btn-success")
+    $("#UV-Index").addClass("btn-success")
 }
   else if (data2.current.uvi < 7) {
-    $("#uviBtn").addClass("btn-warning");
+    $("#UV-Index").addClass("btn-warning");
   }
   else {
-    $("#uviBtn").addClass("btn-danger");
+    $("#UV-Index").addClass("btn-danger");
   }
+  $("#today .cardtext").append(btn)
    }
    )}
