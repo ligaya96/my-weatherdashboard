@@ -1,12 +1,18 @@
-# my-weatherdashboard
- In this weeks Homework we were asked to, while using API, make an app/website that will display the curent 5 day forcast, and when a city is indicates a new city, that city 5 day forcast will then generate. The app also display the user search history and continue on with display . When a city is selected then, the following is presented : The tempature, the weather conditions, the wind speed, and the UV Index. The app will also display if the weather conditiions are mdoerate, or serve. 
+# My- WeatherBoard 
+ While using this APP, the website will display the weather for the location that is searched. The The app also display the user search history and continue on with display . When a city is selected then, the following is presented : The tempature, the weather conditions, the wind speed, and the UV Index. The app will also display if the weather conditiions are moderate, or serve. 
+ 
+# Installation 
+Jquery 
+API Open Weather 
 
+# Resources
+ [OpenWeather API](https://openweathermap.org/api)
 
+# Link 
+ https://ligaya96.github.io/my-weatherdashboard/
 
-resources:  [OpenWeather API](https://openweathermap.org/api)
+# Author 
+Ligaya Herndon
 
-link:  https://ligaya96.github.io/my-weatherdashboard/
-
-
-## screenshot
-![screenshot](./asset/weatherdashboard.png) alt = "screenshot of my weatherdashboard
+## Screenshot
+![screenshot](./asset/weatherdashboard.png) 
