@@ -10,24 +10,8 @@ $(document).ready(function () {
   $("#search-city").on("click", function() {
     displayWeather();
   })
-//  // search history
-// function searchedHistory(){
-// $(".search-history").empty();
-// for (let i = 0; i < cityList.length; i++) {
-//   var city = $("<div>");
-//   var name = $("<span>");
-//   // Adding a class, attribute and text
-//   city.addClass("city d-block border");
-//   city.attr("data-name", cityList[i].cityName);
-//   city.attr("data-lat", cityList[i].lat);
-//   city.attr("data-lon", cityList[i].lon);
-//   name.addClass("city-text");
-//   name.text(cityList[i].cityName);
-//   city.append(name);
-//   // Adding the new element to the HTML
-//   $(".search-history").append(city);
-// }
-  // Jquery API/ search results/ Display weather
+
+  // Display weather
   function displayWeather() {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchedHistory.value + '&units=imperial&appid=ad8618221b820a5c5d95b144d55511c9')
     .then(response => response.json())
@@ -61,19 +45,20 @@ $(document).ready(function () {
     tempFore5.textContent = "Temperature: " + temp5 + "° F";
     humFore5.textContent = "Humidity: " + hum5 + "%";
     $(".show").removeClass("hidden");
-}
-// trying to make UW work finally
-
-var UVI = data.current.uvi;
-UVText.textContent = "currentUV : " + UVI;
-if (UVI <= 2){
+    }
+  // trying to make UW work finally
+  var UVI = data.current.uvi;
+  UVText.textContent = "currentUV : " + UVI;
+  if (UVI <= 2){
   UVIndexText.classList.add("lowUVI");
-}
-if(UVI <= 5){
+  }
+  if(UVI <= 5){
   UVIndexText.classList.add("midUVI");
-}
-if(UVI >= 6){
+  }
+  if(UVI >= 6){
   UVIndexText.classList.add("highUVI");
-}
+  }
 })
+})
+}
 });
