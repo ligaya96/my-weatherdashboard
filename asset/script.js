@@ -1,8 +1,8 @@
 $(document).ready(function () {
   // $("#search").empty();
   var APIKEY = "ad8618221b820a5c5d95b144d55511c9";
-  var searchedHistory = document.querySelector('.search');
-  var windSpeedText = document.querySelector('#currentWind');
+  var searchedHistory = document.querySelector('#search-history');
+  var windText = document.querySelector('#currentWind');
   var cityText = document.querySelector('#currentCity');
   var tempText = document.querySelector('#currentTemp');
   var humidityText = document.querySelector('#currentHum');
@@ -22,11 +22,10 @@ $(document).ready(function () {
     var windVal = data.wind.speed;
     var long = data.coord.lon;
     var lat = data.coord.lat;
-  
     cityText.textContent = cityVal;
     tempText.textContent = "Temperature: " + tempatureVal + "° F";
     humidityText.textContent = "Humidity: " + humidityVal + "%";
-    windSpeedText.textContent = "Wind Speed: " + windVal + " MPH";
+    windText.textContent = "Wind Speed: " + windVal + " MPH";
   // 5 day weather forecast / html addition
   var fivedayforcast = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + '&lon=' + long + APIKEY;
   $.ajax({
@@ -35,15 +34,15 @@ $(document).ready(function () {
 }).then(function (response) {
     for (i = 0; i < 5 ; i++) {
     var date = moment.unix(data.daily[i+1].dt).format("dddd, MMMM Do YYYY");
-    var temp5 = data.daily[i].temp.day;
-    var hum5 = data.daily[i].humidity;
+    var temp = data.daily[i].temp.day;
+    var hum = data.daily[i].humidity;
     var idNumber = i + 1;
-    var dateFore5 = document.getElementById("date" + idNumber);
-    var tempFore5 = document.getElementById("tempature" + idNumber);
-    var humFore5 = document.getElementById("humidity" + idNumber);
-    dateFore5.textContent = date;
-    tempFore5.textContent = "Temperature: " + temp5 + "° F";
-    humFore5.textContent = "Humidity: " + hum5 + "%";
+    var dateFore = document.getElementById("date" + idNumber);
+    var tempFore = document.getElementById("tempature" + idNumber);
+    var humFore = document.getElementById("humidity" + idNumber);
+    dateFore.textContent = date;
+    tempFore.textContent = "Temperature: " + temp + "° F";
+    humFore.textContent = "Humidity: " + hum + "%";
     $(".show").removeClass("hidden");
     }
   // trying to make UW work finally
